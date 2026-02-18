@@ -1,39 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.c                                        :+:      :+:    :+:   */
+/*   ft_isvalid.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: Jmbolana <jmbolana@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/02/18 16:03:12 by Jmbolana          #+#    #+#             */
-/*   Updated: 2026/02/18 16:24:10 by jmbolana         ###   ########.fr       */
+/*   Created: 2026/02/18 16:13:59 by Jmbolana          #+#    #+#             */
+/*   Updated: 2026/02/18 16:13:59 by Jmbolana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	ft_printf(const char *format, ...)
+int	ft_isvalid(char c)
 {
-	va_list	ap;
-	int		i;
-	int		count;
-
-	i = 0;
-	count = 0;
-	va_start(ap, format);
-	while (format[i])
-	{
-		if (format[i] != '%')
-			count += ft_putchar(format[i]);
-		else
-		{
-			if (ft_isvalid(format[i + 1]))
-				count += ft_format(format[++i], ap);
-			else
-				count += ft_putchar(format[++i]);
-		}
-		i++;
-	}
-	va_end(ap);
-	return (count);
+	return (
+		c == 'c'
+		|| c == 's'
+		|| c == 'p'
+		|| c == 'd'
+		|| c == 'i'
+		|| c == 'u'
+		|| c == 'x'
+		|| c == 'X'
+		|| c == '%'
+	);
 }

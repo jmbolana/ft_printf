@@ -1,39 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.c                                        :+:      :+:    :+:   */
+/*   ft_putptr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: Jmbolana <jmbolana@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/02/18 16:03:12 by Jmbolana          #+#    #+#             */
-/*   Updated: 2026/02/18 16:24:10 by jmbolana         ###   ########.fr       */
+/*   Created: 2026/02/18 17:05:13 by Jmbolana          #+#    #+#             */
+/*   Updated: 2026/02/18 17:05:13 by Jmbolana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	ft_printf(const char *format, ...)
+static int	ft_putnbrbase(unsigned long long addr)
 {
-	va_list	ap;
-	int		i;
-	int		count;
+	int			count;
+	char		*s;
 
-	i = 0;
+	s = "0123456789abcdef";
 	count = 0;
-	va_start(ap, format);
-	while (format[i])
-	{
-		if (format[i] != '%')
-			count += ft_putchar(format[i]);
-		else
-		{
-			if (ft_isvalid(format[i + 1]))
-				count += ft_format(format[++i], ap);
-			else
-				count += ft_putchar(format[++i]);
-		}
-		i++;
-	}
-	va_end(ap);
+	if (addr >= 16)
+		count += ft_putnbrbase(addr / 16);
+	count += ft_putchar(s[addr % 16]);
 	return (count);
+}
+
+int	ft_putptr(void *ptr)
+{
+	unsigned long long	addr;
+	int					cnt;
+
+	if (!ptr)
+		return (ft_putstr("(nil)"));
+	cnt = 0;
+	addr = (unsigned long long)ptr;
+	cnt += ft_putstr("0x");
+	cnt += ft_putnbrbase(addr);
+	return (cnt);
 }

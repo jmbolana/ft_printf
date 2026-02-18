@@ -12,18 +12,24 @@
 
 #include "ft_printf.h"
 
-int	ft_putnbr(long n)
+int	ft_putnbr(int n)
 {
-	int	count;
+	char	c;
+	int		count;
 
+	if (n == 0)
+		return (ft_putchar('0'));
+	if (n == INT_MIN)
+		return (ft_putstr("-2147483648"));
 	count = 0;
 	if (n < 0)
 	{
-		write(1, "-", 1);
-		return (ft_putnbr(-n) + 1);
+		count += ft_putchar('-');
+		n *= -1;
 	}
-	if (n > 9)
+	if (n / 10 > 0)
 		count += ft_putnbr(n / 10);
-	count += write(1, &"0123456789"[n % 10], 1);
+	c = (n % 10) + '0';
+	count += ft_putchar(c);
 	return (count);
 }
