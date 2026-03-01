@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: Jmbolana <jmbolana@student.42antananari    +#+  +:+       +#+        */
+/*   By: jmbolana <jmbolana@student.42antananarivo  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/02/18 12:58:48 by Jmbolana          #+#    #+#             */
-/*   Updated: 2026/02/18 12:58:48 by Jmbolana         ###   ########.fr       */
+/*   Created: 2026/03/01 19:14:55 by jmbolana          #+#    #+#             */
+/*   Updated: 2026/03/01 19:15:04 by jmbolana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

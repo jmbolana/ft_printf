@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putptr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: Jmbolana <jmbolana@student.42antananari    +#+  +:+       +#+        */
+/*   By: jmbolana <jmbolana@student.42antananarivo  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/02/18 17:05:13 by Jmbolana          #+#    #+#             */
-/*   Updated: 2026/02/18 17:05:13 by Jmbolana         ###   ########.fr       */
+/*   Created: 2026/03/01 19:15:21 by jmbolana          #+#    #+#             */
+/*   Updated: 2026/03/01 19:15:24 by jmbolana         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
